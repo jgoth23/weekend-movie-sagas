@@ -14,6 +14,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [X] Create database 
 - [X] Install all the npms
 - [X] Create components - Details Page, Add MoviePage, Home page
+- [X] Set up routes to new components 
     1. Home page 
       - make movies clickable, history.push to details page
       - make a way to Add Movie page
