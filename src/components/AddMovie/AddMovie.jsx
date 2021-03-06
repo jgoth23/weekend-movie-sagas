@@ -4,7 +4,7 @@ const AddMovie = () => {
       <h1>Add Movie Here!</h1>
       <form>
       <input type='text' placeholder="movie title" />
-      <input type='text' placeholder="img URL" />
+      <input type='text' placeholder="img poster URL" />
       </form>
     </div>
   )
