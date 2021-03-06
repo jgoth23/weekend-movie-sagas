@@ -13,4 +13,4 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 
 - [X] Create database 
 - [X] Install all the npms
-- [] Create components - Details Page, Add MoviePage
+- [X] Create components - Details Page, Add MoviePage
