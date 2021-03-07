@@ -15,6 +15,11 @@ function MovieList() {
     }, []);
     // history.push('/Details');
 
+    const movieInfo = (id) => {
+      console.log('made it');
+      dispatch({type: 'FETCH_DETAILS', payload: id});
+    }
+
     return (
         <main>
             <h1>MovieList</h1>
@@ -24,7 +29,7 @@ function MovieList() {
                     return (
                         <div key={movie.id} >
                             <h3>{movie.title}</h3>
-                            <img src={movie.poster} alt={movie.title}/>
+                            <img onClick={() => movieInfo(movie.id)} src={movie.poster} alt={movie.title}/>
                         </div>
                     );
                 })}
