@@ -9,10 +9,13 @@ const AddMovie = () => {
   
   useEffect(() => {
     console.log('genre', genre);
-    dispatch({ type: 'FETCH_GENRE' });
+   fetchGenre();
 }, []);
+const fetchGenre = () => {
+  dispatch({ type: 'FETCH_GENRE' });
+}
   
-  const genre = useSelector(store => store.genre);
+  const genre = useSelector(store => store.genres);
 
 
   const [newMovie, setNewMovie] = useState();
@@ -57,7 +60,7 @@ const AddMovie = () => {
         }}>
           {genre.map((g) => {
             return (
-              <option key={g.id}>{g.name}</option>
+              <option value={g.id} key={g.id}>{g.name}</option>
             )
           })}
  
