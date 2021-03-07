@@ -1,4 +1,13 @@
-const Details = () => {
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+function Details() {
+  const dispatch = useDispatch();
+
+
+
+
+
   return (
     <div>
       <h1>All the deets!</h1>

@@ -1,31 +1,77 @@
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 const { Router } = require("react-router-dom")
 
 const AddMovie = () => {
+
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    console.log('genre', genre);
+    dispatch({ type: 'FETCH_GENRE' });
+}, []);
+  
+  const genre = useSelector(store => store.genre);
+
+
+  const [newMovie, setNewMovie] = useState();
+  const [newImage, setNewImage] = useState();
+  const [newDescription, setNewDescription] = useState();
+  const [newGenre, setNewGenre] = useState();
+
+  
+
+  const handleClick = () => {
+    dispatch({
+      type: 'ADDING_MOVIE', 
+      payload: {
+        title: newMovie, 
+        poster: newImage, 
+        description: newDescription, 
+        genre_id: newGenre
+      }
+
+    })
+  }
+
   return (
     <div>
       <h1>Add Movie Here!</h1>
       <form>
-        <input type="text" placeholder="movie title" />
-        <input type="text" placeholder="img poster URL" />
-        <select>
-        <option placeholder="genre">Genre</option>
-        <option value="adventure">Adventure</option>
-        <option value="animated">Animated</option>
-        <option value="biographical">Biographical</option>
-        <option value="comedy">Comedy</option>
-        <option value="disaster">Disaster</option>
-        <option value="drama">Drama</option>
-        <option value="epic">Epic</option>
-        <option value="fantasy">Fantasy</option>
-        <option value="musical">Musical</option>
-        <option value="romantic">Romantic</option>
-        <option value="science fiction">Science Fiction</option>
-        <option value="space-opera">Space-Opera</option>
-        <option value="superhero">Superhero</option>
+        <input type="text"
+        placeholder="movie"
+        onChange={(e) => {
+          setNewMovie(e.target.value);
+        }}
+          />
+        <input type="text"
+        placeholder="URL"
+        onChange={(e) => {
+          setNewImage(e.target.value);
+        }}
+         />
+        <select 
+        onChange={(e) => {
+          setNewGenre(e.target.value);
+        }}>
+          {genre.map((g) => {
+            return (
+              <option key={g.id}>{g.name}</option>
+            )
+          })}
+ 
       </select>
+          
         <div>
-        <textarea placeholder="add a description"></textarea>
+        <textarea type="text"
+        placeholder="Description"
+        onChange={(e) => {
+          setNewDescription(e.target.value);
+        }}>
+        </textarea>
         </div>
+        <button onClick={handleClick}>Save</button>
       </form>
     </div>
   );

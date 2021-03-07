@@ -21,7 +21,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     2. Details Page
       - make a back to list button which will bring user back home page
     3. Add Movie Page
-      - create input fields for movie title and url for poster image
-      - textbox for the description
-      - dropdown for all the genres
+      - [X] create input fields for movie title and url for poster image
+      - [X] textbox for the description
+      - [X] dropdown for all the genres
 

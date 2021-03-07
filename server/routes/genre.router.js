@@ -4,7 +4,7 @@ const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
   // Add query to get all genres
-  const queryText = `SELECT * FROM genre ORDER BY name ASC`;
+  const queryText = `SELECT * FROM genres ORDER BY name ASC`;
   pool
     .query(queryText)
     .then((result) => {

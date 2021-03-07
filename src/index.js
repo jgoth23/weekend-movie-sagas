@@ -6,7 +6,6 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 // Provider allows us to use redux within our react app
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
-// Import saga middleware
 import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
@@ -14,6 +13,8 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
+    yield takeEvery('ADDING_MOVIE', addingMovies); 
+    yield takeEvery('FETCH_GENRE', fetchGenre);
 }
 
 function* fetchAllMovies() {
@@ -27,6 +28,36 @@ function* fetchAllMovies() {
         console.log('get all error');
     }
         
+}
+
+function* addingMovies(action) {
+  try {
+  console.log('in addMovie', action);
+  yield axios.post('/api/movie', action.payload);
+  console.log('where at', action.payload);
+
+  yield put({
+    type: 'FETCH_MOVIES',
+  });
+  }
+  catch (err) {
+    console.log('post failed',  err);
+  }
+}
+
+function* fetchGenre() {
+  try {
+    const genre = yield axios.get('/api/genre')
+    console.log('in genre', genre.data);
+
+    yield put({
+      type: 'SET_GENRES',
+      payload: genre.data
+    })
+  }
+  catch (err) {
+    console.log('error', err);
+  }
 }
 
 // Create sagaMiddleware
