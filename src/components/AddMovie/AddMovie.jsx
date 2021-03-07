@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 const { Router } = require("react-router-dom")
 
 const AddMovie = () => {
+  const history = useHistory();
+
 
   const dispatch = useDispatch();
   
@@ -34,8 +37,11 @@ const fetchGenre = () => {
         description: newDescription, 
         genre_id: newGenre
       }
-
     })
+    history.push('/')
+  }
+  const handleCancel = () => {
+    history.push('/');
   }
 
   return (
@@ -75,6 +81,7 @@ const fetchGenre = () => {
         </textarea>
         </div>
         <button onClick={handleClick}>Save</button>
+        <button onClick={handleCancel}>Cancel</button>
       </form>
     </div>
   );
