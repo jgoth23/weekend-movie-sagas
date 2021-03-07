@@ -1,23 +1,25 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './MovieList.css'
 
 function MovieList() {
 
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
-    // const history = useHistory();
+     const history = useHistory();
 
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
-    // history.push('/Details');
-
+     
     const movieInfo = (id) => {
       console.log('made it');
-      dispatch({type: 'FETCH_DETAILS', payload: id});
+      dispatch({type: 'FETCH_DETAILS', payload: id})
+      setTimeout(function(){history.push('/details');}, 2000)
+      
+      
     }
 
     return (

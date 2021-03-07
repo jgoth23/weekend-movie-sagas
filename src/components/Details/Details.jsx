@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function Details() {
   const dispatch = useDispatch();
+  const history = useHistory();
+
 
 const details = useSelector((store) => store.details);
 
@@ -26,7 +29,7 @@ const details = useSelector((store) => store.details);
           )
         })}
       </div>
-      <button>Back to Home</button>
+      <button onClick={() => history.push('/')}>Back to Home</button>
     </div>
   )
 }
