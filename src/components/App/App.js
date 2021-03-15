@@ -11,7 +11,7 @@ function App() {
       <Router> 
         <nav>
           <div>
-            <Link to="/addMovie">Add a Movie!!</Link>
+            <Link to="/addMovie"></Link>
             </div>
             </nav>       
         <Route path="/" exact>

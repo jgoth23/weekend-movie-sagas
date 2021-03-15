@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './MovieList.css'
+import { makeStyles } from '@material-ui/core/styles';
 
 function MovieList() {
 
@@ -29,7 +30,7 @@ function MovieList() {
             <section className="movies">
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} >
+                        <div className="divContainer" key={movie.id} >
                             <h3>{movie.title}</h3>
                             <img onClick={() => movieInfo(movie.id)} src={movie.poster} alt={movie.title}/>
                         </div>
