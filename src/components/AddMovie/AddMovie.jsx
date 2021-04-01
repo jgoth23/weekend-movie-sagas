@@ -7,6 +7,10 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { purple} from '@material-ui/core/colors';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import swal from 'sweetalert';
+
 
 const useStyles = makeStyles({
   root: {
@@ -19,6 +23,12 @@ const useStyles = makeStyles({
 });
 
 const theme = createMuiTheme({
+  typography: {
+    h2: {
+      fontSize: 42,
+      marginBottom: 25, 
+    }
+  },
   palette: {
     primary: {
       main: purple[600],  
@@ -53,6 +63,10 @@ const AddMovie = () => {
   const [newGenre, setNewGenre] = useState();
 
   const handleClick = () => {
+    swal({
+      title: "Nice choice!!",
+      icon: "success"
+    })
     dispatch({
       type: 'ADDING_MOVIE',
       payload: {
@@ -70,8 +84,11 @@ const AddMovie = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <Container maxWidth="xs">
       <div>
-        <h1>
+        <h1><Typography variant="h2" component="div">
+          Movie Collection 
+        </Typography>
           {' '}
           <ButtonStyled />
         </h1>
@@ -135,6 +152,7 @@ const AddMovie = () => {
           </div>
         </form>
       </div>
+      </Container>
     </ThemeProvider>
   );
 };
