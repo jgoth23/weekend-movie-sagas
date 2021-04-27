@@ -100,13 +100,21 @@ const genres = (state = [], action) => {
     }
 }
 
-const details = (state = [], action) => {
+let movieDetails = [{
+  description: "",
+  name: "",
+  poster:"",
+  title:""
+}]
+
+const details = (state = movieDetails, action) => {
   switch (action.type) {
     case 'SET_DETAILS':
       return action.payload;
       default:
         return state;
   }
+
 }
 
 // Create one store that all components can use

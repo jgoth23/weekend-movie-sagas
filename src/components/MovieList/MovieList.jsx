@@ -18,7 +18,7 @@ function MovieList() {
     const movieInfo = (id) => {
       console.log('made it');
       dispatch({type: 'FETCH_DETAILS', payload: id})
-      setTimeout(function(){history.push('/details');}, 2000)
+      history.push('/details');
       
       
     }
