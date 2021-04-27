@@ -1,12 +1,12 @@
-# Project Name
+# Weekend Movies
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+This is an app for movie lovers. A users can come to the site and add movies to a movie gallery. By clicking on the add movie button you will be directed to the add movie page. Here a user can add the title, description, and a url for the movie poster. Clicking the poster of the desired movie brings the user to a page with a description of the film and gives the viewer a list of genres that the movie belongs to. The back home button takes users back to the main gallery page. 
 
-## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Built with
+
+This app was used using JavaScript, React, Redux, PostgreSQL, Material-ui. 
 
 
 ***TODO***

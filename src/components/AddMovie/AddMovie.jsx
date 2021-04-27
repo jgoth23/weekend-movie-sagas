@@ -21,7 +21,7 @@ import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
   root: {
-    background: 'linear-gradient(45deg, #FE6B8B, #FF8E73)',
+    background: 'linear-gradient(45deg, #B284BE	, #FF8E73)',
     border: 0,
     borderRadius: 15,
     color: 'white',
@@ -32,17 +32,6 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
 
 const theme = createMuiTheme({
   typography: {
@@ -172,9 +161,9 @@ const AddMovie = () => {
           >
             Cancel
           </Button>
-          <div>
+          {/* <div>
             <TextField variant="outlined" color="secondary" type="date" />
-          </div>
+          </div> */}
         </form>
       </div>
       </Container>
