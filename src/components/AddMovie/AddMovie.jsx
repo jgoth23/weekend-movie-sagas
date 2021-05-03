@@ -10,6 +10,7 @@ import { purple} from '@material-ui/core/colors';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import swal from 'sweetalert';
+import * as GiIcons from 'react-icons/gi'
 
 
 const useStyles = makeStyles({
@@ -42,7 +43,7 @@ const theme = createMuiTheme({
 
 function ButtonStyled() {
   const classes = useStyles();
-  return <Button className={classes.root}>Add all the movies!!</Button>;
+  return <Button className={classes.root}>Add a movie!!</Button>;
 }
 const { Router } = require('react-router-dom');
 
@@ -140,7 +141,7 @@ const AddMovie = () => {
 
           <Button
             onClick={handleClick}
-            startIcon={<SaveIcon />}
+            startIcon={<GiIcons.GiSaveArrow />}
             variant="outlined"
             color="primary"
           >
@@ -148,7 +149,7 @@ const AddMovie = () => {
           </Button>
           <Button
             onClick={handleCancel}
-            startIcon={<DeleteIcon />}
+            startIcon={<GiIcons.GiCancel />}
             variant="outlined"
             color="primary"
           >
