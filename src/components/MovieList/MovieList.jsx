@@ -36,6 +36,9 @@ function MovieList() {
                         </div>
                     );
                 })}
+                <div>
+                  <button>Add Movie</button>
+                </div>
             </section>
         </main>
 
