@@ -27,19 +27,19 @@ import * as GiIcons from 'react-icons/gi'
 // });
 
 
-const theme = createMuiTheme({
-  typography: {
-    h2: {
-      fontSize: 42,
-      marginBottom: 25, 
-    }
-  },
-  palette: {
-    primary: {
-      main: purple[600],  
-    }
-  }
-})
+// const theme = createMuiTheme({
+//   typography: {
+//     h2: {
+//       fontSize: 42,
+//       marginBottom: 25, 
+//     }
+//   },
+//   palette: {
+//     primary: {
+//       main: purple[600],  
+//     }
+//   }
+// })
 
 // function ButtonStyled() {
 //   const classes = useStyles();
@@ -91,14 +91,13 @@ const AddMovie = () => {
     // const classes = useStyles();
   
   return (
-    <ThemeProvider theme={theme}>
-      <Container maxWidth="xs">
+    // <ThemeProvider theme={theme}>
+      
       <div>
-        <h1><Typography variant="h2" component="div">
+        <h1>
           Movie Collection 
-        </Typography>
-          {' '}
-          {/* <ButtonStyled /> */}
+        
+          
         </h1>
         <form>
           <input
@@ -150,8 +149,7 @@ const AddMovie = () => {
             className="cancelBtn"
             onClick={handleCancel}
             startIcon={<GiIcons.GiCancel />}
-            variant="outlined"
-            color="primary"
+           
           >
             Cancel
           </button>
@@ -160,8 +158,7 @@ const AddMovie = () => {
           </div> */}
         </form>
       </div>
-      </Container>
-    </ThemeProvider>
+      
     
   );
             
