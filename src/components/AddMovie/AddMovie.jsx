@@ -13,18 +13,18 @@ import swal from 'sweetalert';
 import * as GiIcons from 'react-icons/gi'
 
 
-const useStyles = makeStyles({
-  root: {
-    background: 'linear-gradient(45deg, #B284BE	, #FF8E73)',
-    border: 0,
-    borderRadius: 15,
-    color: 'white',
-    padding: '10px 30px',
-  },
-  table: {
-    minWidth: 650,
-  },
-});
+// const useStyles = makeStyles({
+//   root: {
+//     background: 'linear-gradient(45deg, #B284BE	, #FF8E73)',
+//     border: 0,
+//     borderRadius: 15,
+//     color: 'white',
+//     padding: '10px 30px',
+//   },
+//   table: {
+//     minWidth: 650,
+//   },
+// });
 
 
 const theme = createMuiTheme({
@@ -41,10 +41,10 @@ const theme = createMuiTheme({
   }
 })
 
-function ButtonStyled() {
-  const classes = useStyles();
-  return <Button className={classes.root}>Add a movie!!</Button>;
-}
+// function ButtonStyled() {
+//   const classes = useStyles();
+//   return <Button className={classes.root}>Add a movie!!</Button>;
+// }
 const { Router } = require('react-router-dom');
 
 const AddMovie = () => {
@@ -88,7 +88,7 @@ const AddMovie = () => {
   };
 
   
-    const classes = useStyles();
+    // const classes = useStyles();
   
   return (
     <ThemeProvider theme={theme}>
@@ -98,7 +98,7 @@ const AddMovie = () => {
           Movie Collection 
         </Typography>
           {' '}
-          <ButtonStyled />
+          {/* <ButtonStyled /> */}
         </h1>
         <form>
           <input
@@ -139,22 +139,22 @@ const AddMovie = () => {
             ></textarea>
           </div>
 
-          <Button
+          <button
+            className="saveBtn"
             onClick={handleClick}
             startIcon={<GiIcons.GiSaveArrow />}
-            variant="outlined"
-            color="primary"
           >
             Save
-          </Button>
-          <Button
+          </button>
+          <button
+            className="cancelBtn"
             onClick={handleCancel}
             startIcon={<GiIcons.GiCancel />}
             variant="outlined"
             color="primary"
           >
             Cancel
-          </Button>
+          </button>
           {/* <div>
             <TextField variant="outlined" color="secondary" type="date" />
           </div> */}

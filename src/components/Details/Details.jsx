@@ -13,7 +13,7 @@ const details = useSelector((store) => store.details);
 // returned 0 to avoid changing the query 
   return (
     <div>
-      <h1>All the deets!</h1>
+      <h1>Movie Description</h1>
       <div>
         <h2>{details[0].title}</h2>
         <img src={details[0].poster}/>
@@ -29,7 +29,7 @@ const details = useSelector((store) => store.details);
           )
         })}
       </div>
-      <button className="addBtn" onClick={() => history.push('/')}>Back to Home</button>
+      <button className="backBtn" onClick={() => history.push('/')}>Back to Home</button>
     </div>
   )
 }
