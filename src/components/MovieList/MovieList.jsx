@@ -38,6 +38,9 @@ function MovieList() {
                 src={movie.poster}
                 alt={movie.title}
               />
+              <div>
+              <button>Delete Movie</button>
+              </div>
             </div>
           );
         })}
