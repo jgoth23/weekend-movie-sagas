@@ -42,7 +42,7 @@ function MovieList() {
         })}
       </section>
       <div>
-        <button onClick={addMovie}>Add Movie</button>
+        <button className="addBtn" onClick={addMovie}>Add Movie</button>
       </div>
     </main>
   );
