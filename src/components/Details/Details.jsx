@@ -29,7 +29,7 @@ const details = useSelector((store) => store.details);
           )
         })}
       </div>
-      <button onClick={() => history.push('/')}>Back to Home</button>
+      <button className="addBtn" onClick={() => history.push('/')}>Back to Home</button>
     </div>
   )
 }
