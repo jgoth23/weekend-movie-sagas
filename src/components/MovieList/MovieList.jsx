@@ -23,6 +23,10 @@ function MovieList() {
     history.push('/addmovie')
   }
 
+  const deleteMovie = (id) => {
+    
+  }
+
   return (
     <main>
       <h1>MovieList</h1>
