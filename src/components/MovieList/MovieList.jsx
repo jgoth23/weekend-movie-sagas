@@ -24,7 +24,13 @@ function MovieList() {
   }
 
   const deleteMovie = (id) => {
-    
+    axios({
+      method: 'DELETE',
+      url: `api/movie/${id}`
+    })
+    .catch((error) => {
+      console.log('errror', error);
+    });
   }
 
   return (
