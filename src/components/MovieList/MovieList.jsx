@@ -5,6 +5,7 @@ import './MovieList.css';
 import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 
+
 function MovieList() {
   const dispatch = useDispatch();
   const movies = useSelector((store) => store.movies);
@@ -24,15 +25,13 @@ function MovieList() {
     history.push('/addmovie')
   }
 
-  const deleteMovie = (id) => {
-    axios({
-      method: 'DELETE',
-      url: `api/movie/${id}`,
-    })
-    .catch((error) => {
-      console.log('errror', error);
-    });
-  }
+const handleDelete = (id) => {
+  dispatch({
+    type: 'DELETE',
+    payload: id
+  })
+}
+
 
   return (
     <main>
@@ -50,7 +49,7 @@ function MovieList() {
                 alt={movie.title}
               />
               <div>
-              <button onClick={() => deleteMovie(movie.id)}>Delete Movie</button>
+              <button onClick={() => handleDelete(movie.id)}>Delete Movie</button>
               </div>
             </div>
           );

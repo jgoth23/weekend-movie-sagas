@@ -17,6 +17,7 @@ function* rootSaga() {
     yield takeEvery('ADDING_MOVIE', addingMovies); 
     yield takeEvery('FETCH_GENRE', fetchGenre);
     yield takeEvery('FETCH_DETAILS', fetchDetails);
+    yield takeEvery('DELETE', deleteMovie);
 }
 
 function* fetchAllMovies() {
@@ -75,6 +76,18 @@ function* fetchDetails(action) {
   catch (err) {
     console.log('error', err)
   }
+}
+
+
+function* deleteMovie(action) {
+  try {
+    yield axios.delete(`/api/movie/${action.payload}`);
+    yield put({
+      type: 'FETCH_MOVIES',
+    });
+  } catch (error) {
+  console.log('no movie', error)
+}
 }
 
 // Create sagaMiddleware
