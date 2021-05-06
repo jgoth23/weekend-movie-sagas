@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './MovieList.css';
 import { makeStyles } from '@material-ui/core/styles';
+import axios from 'axios';
 
 function MovieList() {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ function MovieList() {
   const deleteMovie = (id) => {
     axios({
       method: 'DELETE',
-      url: `api/movie/${id}`
+      url: `api/movie/${id}`,
     })
     .catch((error) => {
       console.log('errror', error);
@@ -49,7 +50,7 @@ function MovieList() {
                 alt={movie.title}
               />
               <div>
-              <button>Delete Movie</button>
+              <button onClick={() => deleteMovie(movie.id)}>Delete Movie</button>
               </div>
             </div>
           );
