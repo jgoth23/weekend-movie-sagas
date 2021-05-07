@@ -49,7 +49,7 @@ const handleDelete = (id) => {
                 alt={movie.title}
               />
               <div>
-              <button onClick={() => handleDelete(movie.id)}>Delete Movie</button>
+              <button className="saveBtn" onClick={() => handleDelete(movie.id)}>Delete Movie</button>
               </div>
             </div>
           );
