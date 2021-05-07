@@ -42,14 +42,14 @@ const handleDelete = (id) => {
         {movies.map((movie) => {
           return (
             <div className="card" key={movie.id}>
-              <h3>{movie.title}</h3>
+              <h3 className="txtStyle">{movie.title}</h3>
               <img
                 onClick={() => movieInfo(movie.id)}
                 src={movie.poster}
                 alt={movie.title}
               />
               <div>
-              <button className="saveBtn" onClick={() => handleDelete(movie.id)}>Delete Movie</button>
+              <button className="deleteBtn" onClick={() => handleDelete(movie.id)}>Delete Movie</button>
               </div>
             </div>
           );
