@@ -1,7 +1,7 @@
-.movies {
+/* .movies {
     display : flex;
     flex-wrap: wrap;
-}
+} */
 
 .card {
   /* Add shadows to create the "card" effect */
@@ -10,10 +10,11 @@
   border: 10px;
   border-color: black;
   border-radius: 50px;
-  background-color: #15f4ee;
+  background-color: #1b1b1b;
   
   margin-top: 10px;
   text-align: center;
+  width: 300px;
   
 }
 
